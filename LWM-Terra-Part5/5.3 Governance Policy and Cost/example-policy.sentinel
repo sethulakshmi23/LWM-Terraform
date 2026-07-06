@@ -1,0 +1,21 @@
+# Example Sentinel policy — DENY any S3 bucket resource that doesn't set a "ManagedBy" tag.
+# Illustrative only: Sentinel requires an HCP Terraform Team & Governance (or higher) tier
+# to actually enforce. Walk through this file's logic in class even without a paid tier to test it live.
+
+import "tfplan/v2" as tfplan
+
+s3_buckets = filter tfplan.resource_changes as _, rc {
+	rc.type is "aws_s3_bucket" and
+		rc.mode is "managed" and
+		(rc.change.actions contains "create" or rc.change.actions contains "update")
+}
+
+require_managed_by_tag = rule {
+	all s3_buckets as _, bucket {
+		bucket.change.after.tags contains "ManagedBy"
+	}
+}
+
+main = rule {
+	require_managed_by_tag
+}

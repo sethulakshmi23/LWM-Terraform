@@ -1,17 +1,17 @@
-# Terraform Associate (004) — Day 1: Foundations & the Core Workflow
+# Day 1 — Foundations & the Core Workflow
 
-Lab material for **Day 1** of the Terraform Associate (004) course, located in [`LWM-Terra-Part1/`](LWM-Terra-Part1/).
+Lab material for **Day 1** of the Terraform Associate (004) course, in `LWM-Terra-Part1/`.
 Maps to exam **Domain 1** (IaC), **Domain 2** (Terraform fundamentals), **Domain 3** (Core workflow).
 
 > Focus: understand what Terraform is, why Infrastructure as Code matters, and run the workflow end-to-end against AWS.
 
 ---
 
-## 1. What's in `LWM-Terra-Part1/`
+## 1. What's in this folder
 
 | File | Contents |
 |---|---|
-| [`main.tf`](LWM-Terra-Part1/main.tf) | 1 `terraform` block, 1 `provider` block, 5 resources |
+| [`main.tf`](main.tf) | 1 `terraform` block, 1 `provider` block, 5 resources |
 
 ### Example count in `main.tf`
 
@@ -96,7 +96,7 @@ Terraform's AWS provider reads credentials from the same chain the AWS CLI uses 
 
 ## 4. Core workflow — commands to run
 
-Run these **in order**, inside the `LWM-Terra-Part1/` folder, on a terminal with AWS credentials configured.
+Run these **in order**, inside this folder, on a terminal with AWS credentials configured.
 
 | Step | Command | What it does |
 |---|---|---|
